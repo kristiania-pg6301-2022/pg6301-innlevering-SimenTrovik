@@ -30,5 +30,5 @@ QuizRouter.post("/", (req, res) => {
     }
   }
 
-  res.send(isCorrect);
+  res.json({ isCorrect: isCorrect });
 });

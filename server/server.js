@@ -14,6 +14,13 @@ app.get("/test", (req, res) => {
 
 app.use("/api/question", QuizRouter);
 app.use(express.static(path.resolve("../client/dist")));
+app.use((req, res, next) => {
+  if (req.method === "GET" && !req.path.startsWith("/api")) {
+    return res.sendFile(path.resolve("../client/dist/index.html"));
+  } else {
+    next();
+  }
+});
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
