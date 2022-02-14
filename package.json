@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "cd server && npm run start",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "cd client && npm install --include=dev && npm run build",
+    "build:server": "cd server && npm install",
     "format:check": "prettier --check **/*.{js,ts,jsx,tsx}",
     "format": "prettier --write **/*.{js,ts,jsx,tsx}",
-    "start": "cd server && npm run start",
-    "build": "cd server && npm ci",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

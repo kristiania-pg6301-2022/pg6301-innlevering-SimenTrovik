@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import path from "path";
+import { QuizRouter } from "./quizRouter.js";
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.get("/test", (req, res) => {
   res.send("hello from server");
 });
 
+app.use("/api/question", QuizRouter);
 app.use(express.static(path.resolve("../client/dist")));
 
 const PORT = process.env.PORT || 3000;
