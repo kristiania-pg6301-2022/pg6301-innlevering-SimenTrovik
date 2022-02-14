@@ -1,0 +1,27 @@
+{
+  "name": "pg6301-innlevering-simentrovik",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format:check": "prettier --check **/*.{js,ts,jsx,tsx}",
+    "format": "prettier --write **/*.{js,ts,jsx,tsx}",
+    "start": "cd server && npm run start",
+    "build": "cd server && npm ci",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristiania-pg6301-2022/pg6301-innlevering-SimenTrovik.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kristiania-pg6301-2022/pg6301-innlevering-SimenTrovik/issues"
+  },
+  "homepage": "https://github.com/kristiania-pg6301-2022/pg6301-innlevering-SimenTrovik#readme",
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}
