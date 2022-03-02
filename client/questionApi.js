@@ -11,6 +11,6 @@ export const questionApi = {
       },
       body: JSON.stringify({ id: id, answer: answer }),
     });
-    return res.body;
+    return res.json();
   },
 };
