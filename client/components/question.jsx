@@ -4,6 +4,9 @@ import React from "react";
 export function Question({ addToCounter, questionApi }) {
   const [loading, setLoading] = useState(true);
   const [question, setQuestion] = useState({});
+
+  // Vi føler dette er en litt weird måte å få lastet et nytt spørsmål etter brukeren har svart
+  // Du må gjerne gi tilbakemelding på en bedre løsning :)
   const [answered, setAnswered] = useState(0);
 
   useEffect(async () => {
