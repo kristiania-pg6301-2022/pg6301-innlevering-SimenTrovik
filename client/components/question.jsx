@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import React from "react";
 
-export function Question({ questionApi }) {
+export function Question({ addToCounter, questionApi }) {
   const [loading, setLoading] = useState(true);
   const [question, setQuestion] = useState({});
+  const [answered, setAnswered] = useState(0);
 
   useEffect(async () => {
     setLoading(true);
     setQuestion(await questionApi.getQuestion());
     setLoading(false);
-  }, []);
+  }, [answered]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -19,7 +20,12 @@ export function Question({ questionApi }) {
     event.preventDefault();
     const answer = event.target.answer.value;
     const result = await questionApi.checkAnswer(question.id, answer);
-    console.log(result);
+    if (result.isCorrect) {
+      addToCounter();
+    } else {
+      alert("Wrong");
+    }
+    setAnswered(answered + 1);
   }
 
   return (
