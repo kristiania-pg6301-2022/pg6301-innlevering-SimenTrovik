@@ -1,7 +1,7 @@
 ![example workflow](https://github.com/kristiania-pg6301-2022/pg6301-innlevering-SimenTrovik/actions/workflows/test.yml/badge.svg)
 
-#Krav fra oppgavetekst:
-___
+## Krav fra oppgavetekst:
+
 * [x] Parcel
 * [x] React
 * [x] React Router
