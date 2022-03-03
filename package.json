@@ -9,8 +9,7 @@
     "build:client": "cd client && npm install --include=dev && npm run build",
     "build:server": "cd server && npm install",
     "format:check": "prettier --check **/*.{js,ts,jsx,tsx}",
-    "format": "prettier --write **/*.{js,ts,jsx,tsx}",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write **/*.{js,ts,jsx,tsx}"
   },
   "repository": {
     "type": "git",

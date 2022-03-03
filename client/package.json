@@ -6,13 +6,40 @@
   "scripts": {
     "dev": "parcel watch index.html",
     "build": "npm install --include=dev && parcel build index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
     "parcel": "^2.3.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "@babel/preset-react"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!index.jsx",
+      "!coverage/**",
+      "!dist/**"
+    ]
   },
   "dependencies": {
     "react": "^17.0.2",

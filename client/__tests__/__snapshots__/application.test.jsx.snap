@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`application renders as expected 1`] = `
+<div>
+  <div>
+    <h1>
+      Welcome to Quiz'ter
+    </h1>
+    <div>
+      Click to start a quiz
+    </div>
+    <a
+      href="/quizPage"
+    >
+      Quiz
+    </a>
+  </div>
+</div>
+`;
