@@ -1,6 +1,6 @@
 ![example workflow](https://github.com/kristiania-pg6301-2022/pg6301-innlevering-SimenTrovik/actions/workflows/test.yml/badge.svg)
 
-##Krav fra oppgavetekst:
+#Krav fra oppgavetekst:
 ___
 * [x] Parcel
 * [x] React
