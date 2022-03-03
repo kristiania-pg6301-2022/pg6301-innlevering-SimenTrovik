@@ -1,8 +1,10 @@
 import TEST_QUESTION from "./testdata/TEST_QUESTION.json";
-import { Question } from "../components/question.jsx";
 import ReactDOM from "react-dom";
 import React from "react";
 import { act } from "react-dom/test-utils";
+import { Simulate } from "react-dom/test-utils";
+import { MemoryRouter } from "react-router-dom";
+import { QuizPage } from "../components/quizPage";
 
 async function getQuestion() {
   return {
@@ -12,10 +14,13 @@ async function getQuestion() {
     answers: TEST_QUESTION.answers,
   };
 }
+async function checkAnswer(id, answer) {
+  return { isCorrect: true };
+}
 
 const defaultQuestionApi = {
   getQuestion,
-  checkAnswer: jest.fn(),
+  checkAnswer,
 };
 
 describe("question", () => {
@@ -23,10 +28,33 @@ describe("question", () => {
     const element = document.createElement("div");
     await act(async () => {
       await ReactDOM.render(
-        <Question questionApi={defaultQuestionApi} />,
+        <MemoryRouter>
+          <QuizPage questionApi={defaultQuestionApi} />
+        </MemoryRouter>,
         element
       );
     });
     expect(element).toMatchSnapshot();
   });
+
+  /*it("submits a question and gets answer", async () => {
+    const onCheckAnswer = jest.fn();
+    const element = document.createElement("div");
+
+    await act(async () => {
+      await ReactDOM.render(
+        <MemoryRouter>
+          <QuizPage questionApi={defaultQuestionApi} />
+        </MemoryRouter>,
+        element
+      );
+    });
+
+    Simulate.submit(element.querySelector("form"));
+
+    expect(onCheckAnswer).toHaveBeenCalledWith({
+      id: "974",
+      answer: "answer_a",
+    });
+  });*/
 });

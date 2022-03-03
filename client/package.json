@@ -7,6 +7,7 @@
     "dev": "parcel watch index.html",
     "build": "npm install --include=dev && parcel build index.html",
     "test": "jest",
+    "verify": "jest --collectCoverage",
     "test:coverage": "jest --coverage"
   },
   "keywords": [],
@@ -36,6 +37,7 @@
     "testEnvironment": "jsdom",
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
+      "!questionApi.js",
       "!index.jsx",
       "!coverage/**",
       "!dist/**"

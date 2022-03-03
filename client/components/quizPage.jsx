@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { questionApi } from "../questionApi";
 import { Question } from "./question.jsx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import React from "react";
 
-export function QuizPage() {
+export function QuizPage({ questionApi }) {
   const [counter, setCounter] = useState(0);
 
   function addToCounter() {

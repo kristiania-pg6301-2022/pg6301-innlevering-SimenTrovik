@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1646321198733" clover="3.2.0">
+  <project timestamp="1646321198733" name="All files">
+    <metrics statements="25" coveredstatements="17" conditionals="6" coveredconditionals="4" methods="8" coveredmethods="6" elements="39" coveredelements="27" complexity="0" loc="25" ncloc="25" packages="1" files="4" classes="4"/>
+    <file name="application.jsx" path="C:\Users\mho\IdeaProjects\pg6301-innlevering-SimenTrovik\client\components\application.jsx">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="8" count="1" type="stmt"/>
+    </file>
+    <file name="frontPage.jsx" path="C:\Users\mho\IdeaProjects\pg6301-innlevering-SimenTrovik\client\components\frontPage.jsx">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="5" count="1" type="stmt"/>
+    </file>
+    <file name="question.jsx" path="C:\Users\mho\IdeaProjects\pg6301-innlevering-SimenTrovik\client\components\question.jsx">
+      <metrics statements="20" coveredstatements="13" conditionals="6" coveredconditionals="4" methods="4" coveredmethods="3"/>
+      <line num="5" count="6" type="stmt"/>
+      <line num="6" count="6" type="stmt"/>
+      <line num="10" count="6" type="stmt"/>
+      <line num="12" count="6" type="stmt"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="18" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="19" count="4" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="34" count="2" type="stmt"/>
+      <line num="39" count="12" type="cond" truecount="2" falsecount="0"/>
+      <line num="40" count="4" type="stmt"/>
+      <line num="42" count="8" type="stmt"/>
+    </file>
+    <file name="quizPage.jsx" path="C:\Users\mho\IdeaProjects\pg6301-innlevering-SimenTrovik\client\components\quizPage.jsx">
+      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
