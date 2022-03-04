@@ -14,13 +14,14 @@ async function getQuestion() {
     answers: TEST_QUESTION.answers,
   };
 }
+/*
 async function checkAnswer(id, answer) {
   return { isCorrect: true };
-}
+}*/
 
 const defaultQuestionApi = {
   getQuestion,
-  checkAnswer,
+  checkAnswer: jest.fn(),
 };
 
 describe("question", () => {
@@ -37,7 +38,7 @@ describe("question", () => {
     expect(element).toMatchSnapshot();
   });
 
-  /*it("submits a question and gets answer", async () => {
+  it("submits a question and gets answer", async () => {
     const onCheckAnswer = jest.fn();
     const element = document.createElement("div");
 
@@ -49,12 +50,12 @@ describe("question", () => {
         element
       );
     });
-
+    //defaultQuestionApi.checkAnswer(974, "answer_a");
     Simulate.submit(element.querySelector("form"));
 
-    expect(onCheckAnswer).toHaveBeenCalledWith({
-      id: "974",
-      answer: "answer_a",
-    });
-  });*/
+    expect(defaultQuestionApi.checkAnswer).toHaveBeenCalledWith(
+      974,
+      "answer_a"
+    );
+  });
 });
