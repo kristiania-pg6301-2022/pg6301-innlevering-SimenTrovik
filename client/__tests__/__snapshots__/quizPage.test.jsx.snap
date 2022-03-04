@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`question renders a question 1`] = `
+<div>
+  <div>
+    <a
+      href="/"
+    >
+      Frontpage
+    </a>
+    <h1>
+      This is the quiz
+    </h1>
+    <p
+      id="counter"
+    >
+      Correct answers: 
+      0
+    </p>
+    <div>
+      <div
+        class="top"
+      >
+        What is the correct JavaScript syntax to change the content of the HTML element below?
+      </div>
+      <form>
+        <div>
+          <input
+            name="answer"
+            type="radio"
+            value="answer_a"
+          />
+          #demo.innerHTML = "Hello World!";
+        </div>
+        <div>
+          <input
+            name="answer"
+            type="radio"
+            value="answer_b"
+          />
+          document.getElementById("demo").innerHTML = "Hello World!";
+        </div>
+        <div>
+          <input
+            name="answer"
+            type="radio"
+            value="answer_c"
+          />
+          document.getElement("p").innerHTML = "Hello World!";
+        </div>
+        <div>
+          <input
+            name="answer"
+            type="radio"
+            value="answer_d"
+          />
+          document.getElementByName("p").innerHTML = "Hello World!";
+        </div>
+        <button>
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;

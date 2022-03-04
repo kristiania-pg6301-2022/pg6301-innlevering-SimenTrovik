@@ -1,0 +1,11 @@
+GET {{server}}/api/question
+
+###
+
+POST {{server}}/api/question
+Content-Type: application/json
+
+{
+  "id": "974",
+  "answer": "answer_i"
+}
