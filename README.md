@@ -1,7 +1,7 @@
 ![example workflow](https://github.com/kristiania-pg6301-2022/pg6301-innlevering-SimenTrovik/actions/workflows/test.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/kristiania-pg6301-2022/pg6301-innlevering-SimenTrovik/badge.svg?branch=main)](https://coveralls.io/github/kristiania-pg6301-2022/pg6301-innlevering-SimenTrovik?branch=main)
 
-Link til heroku: https://web-innlevering.herokuapp.com/quizPage
+Link til heroku: https://web-innlevering.herokuapp.com
 
 ## Krav fra oppgavetekst:
 
