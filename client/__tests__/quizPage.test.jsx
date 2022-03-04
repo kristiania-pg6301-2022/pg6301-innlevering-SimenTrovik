@@ -14,16 +14,7 @@ async function getQuestion() {
     answers: TEST_QUESTION.answers,
   };
 }
-/*
 async function checkAnswer(id, answer) {
-<<<<<<< HEAD
-  return { isCorrect: true };
-}*/
-
-const defaultQuestionApi = {
-  getQuestion,
-  checkAnswer: jest.fn(),
-=======
   if (answer === "answer_b") {
     return { isCorrect: true };
   } else {
@@ -34,7 +25,6 @@ const defaultQuestionApi = {
 const defaultQuestionApi = {
   getQuestion,
   checkAnswer: jest.fn().mockImplementation(checkAnswer),
->>>>>>> 85c4c22ec22c0ab3c6d63322ebedfc005529f4d5
 };
 
 describe("question", () => {
@@ -51,12 +41,7 @@ describe("question", () => {
     expect(element).toMatchSnapshot();
   });
 
-<<<<<<< HEAD
-  it("submits a question and gets answer", async () => {
-    const onCheckAnswer = jest.fn();
-=======
   it("submits a question and gets answer correct", async () => {
->>>>>>> 85c4c22ec22c0ab3c6d63322ebedfc005529f4d5
     const element = document.createElement("div");
 
     await act(async () => {
@@ -67,11 +52,6 @@ describe("question", () => {
         element
       );
     });
-<<<<<<< HEAD
-    //defaultQuestionApi.checkAnswer(974, "answer_a");
-    Simulate.submit(element.querySelector("form"));
-
-=======
 
     await act(async () => {
       await Simulate.click(element.querySelector("input[value=answer_b]"));
@@ -101,7 +81,6 @@ describe("question", () => {
       await Simulate.submit(element.querySelector("form"));
     });
 
->>>>>>> 85c4c22ec22c0ab3c6d63322ebedfc005529f4d5
     expect(defaultQuestionApi.checkAnswer).toHaveBeenCalledWith(
       974,
       "answer_a"
