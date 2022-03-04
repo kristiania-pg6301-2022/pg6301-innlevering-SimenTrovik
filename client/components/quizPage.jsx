@@ -6,8 +6,8 @@ import React from "react";
 export function QuizPage({ questionApi }) {
   const [counter, setCounter] = useState(0);
 
-  function addToCounter() {
-    setCounter(counter + 1);
+  function alterCounter(amount) {
+    setCounter(counter + amount);
   }
 
   return (
@@ -15,7 +15,7 @@ export function QuizPage({ questionApi }) {
       <Link to={"/"}>Frontpage</Link>
       <h1>This is the quiz</h1>
       <p id={"counter"}>Correct answers: {counter}</p>
-      <Question addToCounter={addToCounter} questionApi={questionApi} />
+      <Question alterCounter={alterCounter} questionApi={questionApi} />
     </div>
   );
 }

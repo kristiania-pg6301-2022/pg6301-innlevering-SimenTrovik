@@ -15,12 +15,16 @@ async function getQuestion() {
   };
 }
 async function checkAnswer(id, answer) {
-  return { isCorrect: true };
+  if (answer === "answer_b") {
+    return { isCorrect: true };
+  } else {
+    return { isCorrect: false };
+  }
 }
 
 const defaultQuestionApi = {
   getQuestion,
-  checkAnswer,
+  checkAnswer: jest.fn().mockImplementation(checkAnswer),
 };
 
 describe("question", () => {
@@ -37,8 +41,7 @@ describe("question", () => {
     expect(element).toMatchSnapshot();
   });
 
-  /*it("submits a question and gets answer", async () => {
-    const onCheckAnswer = jest.fn();
+  it("submits a question and gets answer correct", async () => {
     const element = document.createElement("div");
 
     await act(async () => {
@@ -50,11 +53,37 @@ describe("question", () => {
       );
     });
 
-    Simulate.submit(element.querySelector("form"));
-
-    expect(onCheckAnswer).toHaveBeenCalledWith({
-      id: "974",
-      answer: "answer_a",
+    await act(async () => {
+      await Simulate.click(element.querySelector("input[value=answer_b]"));
+      await Simulate.submit(element.querySelector("form"));
     });
-  });*/
+
+    expect(defaultQuestionApi.checkAnswer).toHaveBeenCalledWith(
+      974,
+      "answer_b"
+    );
+  });
+
+  it("submits a question and gets answer wrong", async () => {
+    const element = document.createElement("div");
+
+    await act(async () => {
+      await ReactDOM.render(
+        <MemoryRouter>
+          <QuizPage questionApi={defaultQuestionApi} />
+        </MemoryRouter>,
+        element
+      );
+    });
+
+    await act(async () => {
+      await Simulate.click(element.querySelector("input[value=answer_a]"));
+      await Simulate.submit(element.querySelector("form"));
+    });
+
+    expect(defaultQuestionApi.checkAnswer).toHaveBeenCalledWith(
+      974,
+      "answer_a"
+    );
+  });
 });
