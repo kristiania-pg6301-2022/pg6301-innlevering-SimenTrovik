@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import React from "react";
 
-export function Question({ addToCounter, questionApi }) {
+export function Question({ alterCounter, questionApi }) {
   const [loading, setLoading] = useState(true);
   const [question, setQuestion] = useState({});
+  const [chosen, setChosen] = useState("");
 
   // Vi føler dette er en litt weird måte å få lastet et nytt spørsmål etter brukeren har svart
   // Du må gjerne gi tilbakemelding på en bedre løsning :)
@@ -21,12 +22,11 @@ export function Question({ addToCounter, questionApi }) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const answer = event.target.answer.value;
-    const result = await questionApi.checkAnswer(question.id, answer);
+    const result = await questionApi.checkAnswer(question.id, chosen);
     if (result.isCorrect) {
-      addToCounter();
+      alterCounter(1);
     } else {
-      alert("Wrong");
+      alterCounter(-1);
     }
     setAnswered(answered + 1);
   }
@@ -41,7 +41,14 @@ export function Question({ addToCounter, questionApi }) {
           }
           return (
             <div key={key}>
-              <input type={"radio"} name={"answer"} value={key} />
+              <input
+                type={"radio"}
+                name={"answer"}
+                value={key}
+                onClick={(e) => {
+                  setChosen(key);
+                }}
+              />
               {val}
             </div>
           );
